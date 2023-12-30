@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "python-project-template"
+version = "1.0.0"
+description = ""
+authors = ["ethan-mcconkey <ethanmcconkey@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^7.4.3"
+coverage = "^7.4.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+
+[tool.poe.tasks]
+type = 'mypy ./python_project_template/ --strict'
+test = 'pytest'
+test-cov = 'pytest --cov=python_project_template'
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
